@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Playwright
+playwright-report/
+playwright/.cache/
+test-results/
+
+# OS files
+.DS_Store
+
+# Environment
+.env
+.env.local
