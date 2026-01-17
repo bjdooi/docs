@@ -1,0 +1,71 @@
+/* Custom dark theme styling - IBM Langflow inspired */
+
+/* Root color variables override */
+:root {
+  --background-dark: #0f172a;
+  --sidebar-dark: #1e293b;
+  /* --primary: #3B82F6; */
+  --primary-light: #60A5FA;
+}
+
+/* Force dark background on body */
+body {
+  background-color: #0f172a;
+}
+
+/* Navbar styling */
+#navbar {
+  background-color: #0f172a;
+  border-bottom: 1px solid #1e293b;
+}
+
+/* Sidebar styling */
+#sidebar {
+  background-color: #1e293b;
+}
+
+/* Main content area */
+#content-area {
+  background-color: #0f172a;
+}
+
+/* Footer styling */
+#footer {
+  background-color: #0f172a;
+  border-top: 1px solid #1e293b;
+}
+
+/* Code blocks - dark theme */
+pre, code {
+  background-color: #1e293b !important;
+}
+
+pre {
+  border: 1px solid #334155;
+  border-radius: 8px;
+}
+
+/* Links - blue accent */
+a {
+  color: #60A5FA;
+}
+
+a:hover {
+  color: #93C5FD;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #f8fafc;
+}
+
+/* Body text */
+p, li {
+  color: #e2e8f0;
+}
+
+/* Cards and callouts */
+.callout {
+  background-color: #1e293b;
+  border-color: #334155;
+}

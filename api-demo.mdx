@@ -1,0 +1,105 @@
+---
+title: 'External API Demo'
+description: 'A demonstration of fetching and displaying data from external APIs using custom React components'
+---
+
+# External API Integration Demo
+
+This page demonstrates how to create custom React components in Mintlify that fetch data from external APIs, handle loading states, and display errors gracefully.
+
+## GitHub User Profile Component
+
+The component below fetches user data from the GitHub API and displays it in a nicely formatted card. It includes:
+
+- **Loading state** - Animated loading indicator while fetching data
+- **Error handling** - Clear error messages if the API call fails
+- **Responsive design** - Clean, dark-themed UI that matches the site style
+- **Real-time data** - Fetches fresh data from GitHub's public API
+
+### Default Example (GitHub organization)
+
+<ExternalDataFetcher />
+
+### Custom User Example
+
+You can specify any GitHub username as a prop:
+
+<ExternalDataFetcher username="torvalds" />
+
+### Another Example
+
+<ExternalDataFetcher username="gaearon" />
+
+## Implementation Details
+
+The component is built with:
+
+- **React Hooks** - `useState` and `useEffect` for state management and side effects
+- **Fetch API** - Native browser API for making HTTP requests
+- **Tailwind CSS** - Utility-first CSS framework for styling
+- **Error Boundaries** - Graceful error handling for failed API calls
+
+### Key Features
+
+<Card title="Loading State" icon="spinner">
+  Displays an animated loading indicator while fetching data from the API
+</Card>
+
+<Card title="Error Handling" icon="triangle-exclamation">
+  Shows user-friendly error messages when API calls fail, including HTTP status codes
+</Card>
+
+<Card title="Responsive Design" icon="mobile">
+  Adapts to different screen sizes with a clean, modern dark theme
+</Card>
+
+<Card title="Dynamic Props" icon="code">
+  Accepts username as a prop to fetch any GitHub user's data
+</Card>
+
+## Usage in MDX
+
+To use this component in your documentation pages, simply import it and pass the desired username:
+
+```jsx
+<ExternalDataFetcher username="yourUsername" />
+```
+
+If no username is provided, it defaults to showing the "github" organization profile.
+
+## Code Structure
+
+The component follows best practices for React development:
+
+1. **State Management** - Separate states for data, loading, and errors
+2. **Side Effects** - useEffect hook for API calls with proper cleanup
+3. **Conditional Rendering** - Different UI for loading, error, and success states
+4. **Accessibility** - Semantic HTML and proper alt text for images
+5. **Type Safety** - PropTypes or TypeScript can be added for type checking
+
+## API Source
+
+This demo uses the GitHub Users API endpoint:
+```
+https://api.github.com/users/{username}
+```
+
+The API is public and does not require authentication for basic requests, though rate limits apply.
+
+<Note>
+  The GitHub API has a rate limit of 60 requests per hour for unauthenticated requests. For production use, consider implementing authentication or caching strategies.
+</Note>
+
+## Extending This Component
+
+You can extend this pattern to work with any public API:
+
+- **JSONPlaceholder** - For test data and prototyping
+- **REST Countries API** - For country information
+- **OpenWeather API** - For weather data
+- **News API** - For news articles
+- **Your own API** - For custom backend integration
+
+<Tip>
+  Always handle errors gracefully and provide loading feedback to improve user experience.
+</Tip>
