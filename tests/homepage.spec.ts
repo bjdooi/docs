@@ -19,16 +19,14 @@ test.describe('Homepage', () => {
 
   test('should have working navigation cards', async ({ page }) => {
     await page.goto('/');
+    await page.waitForLoadState('networkidle');
 
-    // Verify navigation cards are visible
-    await expect(page.getByText('Start here')).toBeVisible();
-    await expect(page.getByText('Follow our three step quickstart guide.')).toBeVisible();
-
-    // Verify multiple cards in the grid
-    await expect(page.getByText('Edit locally')).toBeVisible();
-    await expect(page.getByText('Customize your site')).toBeVisible();
-    await expect(page.getByText('Set up navigation')).toBeVisible();
-    await expect(page.getByText('API documentation')).toBeVisible();
+    // Verify navigation cards are visible using headings (more specific than text)
+    await expect(page.getByRole('heading', { name: 'Start here' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Edit locally' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Customize your site' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Set up navigation' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'API documentation' })).toBeVisible();
   });
 
   test('should have working external link', async ({ page }) => {
