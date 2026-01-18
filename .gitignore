@@ -12,3 +12,30 @@ test-results/
 # Environment
 .env
 .env.local
+.env.*.local
+.env.production
+.env.staging
+
+# Security - Credentials and keys
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.crt
+credentials.json
+secrets.json
+secret.json
+auth.json
+service-account.json
+*-credentials.json
+
+# SSH keys (if accidentally placed in repo)
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+
+# Cloud provider credentials
+.aws/
+.gcloud/
