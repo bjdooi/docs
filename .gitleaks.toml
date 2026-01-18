@@ -1,0 +1,21 @@
+title = "Gitleaks Configuration"
+
+[extend]
+# Use the default gitleaks config as base
+useDefault = true
+
+[allowlist]
+description = "Global allowlist"
+paths = [
+  # Test files may contain example/mock credentials
+  '''tests/.*''',
+  # Documentation may show example API keys
+  '''.*\.mdx?$''',
+]
+
+# Allowlist specific patterns that are known false positives
+regexes = [
+  # Example API keys in documentation
+  '''sk-example.*''',
+  '''pk_test_.*''',
+]

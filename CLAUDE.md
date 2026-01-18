@@ -56,6 +56,7 @@ A Mintlify documentation site for documenting AI tools and workflows. Dark theme
 | Test Specialist | `agent/testing` | `~/.claude/agents/test-specialist.md` | `/agent-summaries/testing.md` |
 | A11y Specialist | `agent/a11y` | `~/.claude/agents/a11y-specialist.md` | `/agent-summaries/a11y.md` |
 | Frontend Specialist | `agent/frontend` | `~/.claude/agents/frontend-specialist.md` | `/agent-summaries/frontend.md` |
+| Security Specialist | `agent/security` | `~/.claude/agents/security-specialist.md` | `/agent-summaries/security.md` |
 
 ### Spawning Agents
 Use Task tool with `model="sonnet"` and provide:
