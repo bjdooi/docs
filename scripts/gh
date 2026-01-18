@@ -1,0 +1,14 @@
+#!/bin/bash
+# GitHub CLI wrapper that uses the correct gh binary and auth token
+# Usage: ./scripts/gh <any gh command>
+
+GH_BIN="/usr/local/Cellar/gh/2.85.0/bin/gh"
+MCP_CONFIG="$HOME/.claude/mcp_servers.json"
+
+# Extract token from MCP config
+if [ -f "$MCP_CONFIG" ]; then
+    export GH_TOKEN=$(grep GITHUB_PERSONAL_ACCESS_TOKEN "$MCP_CONFIG" | sed 's/.*: *"//' | sed 's/".*//')
+fi
+
+# Run gh with all passed arguments
+exec "$GH_BIN" "$@"

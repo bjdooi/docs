@@ -44,11 +44,33 @@ A Mintlify documentation site for documenting AI tools and workflows. Dark theme
 - Reports uploaded as artifacts on failure
 
 ## Multi-Agent Workflow
-This project uses specialized agents for parallel work:
-- **Test Specialist** - Playwright tests, TDD approach
-- **A11y Specialist** - WCAG compliance, axe-core audits
-- **Frontend Specialist** - Custom components, theming
-- Agent summaries stored in `/agent-summaries/` for context persistence
+
+**You are the Coordinator (AI Chief of Staff).** At session start, read your full instructions:
+```
+~/.claude/agents/coordinator.md
+```
+
+### Your Team
+| Agent | Branch | Instructions | Summary |
+|-------|--------|--------------|---------|
+| Test Specialist | `agent/testing` | `~/.claude/agents/test-specialist.md` | `/agent-summaries/testing.md` |
+| A11y Specialist | `agent/a11y` | `~/.claude/agents/a11y-specialist.md` | `/agent-summaries/a11y.md` |
+| Frontend Specialist | `agent/frontend` | `~/.claude/agents/frontend-specialist.md` | `/agent-summaries/frontend.md` |
+
+### Spawning Agents
+Use Task tool with `model="sonnet"` and provide:
+1. Their instruction file content from `~/.claude/agents/`
+2. Project CLAUDE.md context
+3. Their previous summary from `/agent-summaries/`
+4. The specific task to complete
+
+### GitHub CLI
+Use the project wrapper script (handles auth automatically):
+```bash
+./scripts/gh pr create ...
+./scripts/gh pr list
+./scripts/gh auth status
+```
 
 ## CRITICAL RULES
 - **User's word is absolute** - Always pause and read user messages immediately, even mid-task
