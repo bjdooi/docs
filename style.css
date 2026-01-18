@@ -69,3 +69,23 @@ p, li {
   background-color: #1e293b;
   border-color: #334155;
 }
+
+/* Accessibility fixes - Color contrast improvements */
+
+/* Fix search box contrast - target search placeholder and shortcut */
+/* Search text needs contrast ratio of 4.5:1, currently 4.42 */
+/* Changing from #949aa2 to a lighter shade for better contrast against #293445 */
+.truncate.min-w-0 {
+  color: #a8aeb6 !important; /* Improved from #949aa2 for 4.5:1+ contrast */
+}
+
+/* Fix search keyboard shortcut contrast */
+.flex-none.text-xs.font-semibold {
+  color: #a8aeb6 !important; /* Improved from #949aa2 for 4.5:1+ contrast */
+}
+
+/* Fix footer "Powered by" text contrast */
+/* Currently 3.75 contrast (#717377 on #0f172a), needs 4.5:1 */
+#footer .items-baseline > span {
+  color: #8a8d91 !important; /* Improved from #717377 for 4.5:1+ contrast */
+}
