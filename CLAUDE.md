@@ -50,6 +50,12 @@ This project uses specialized agents for parallel work:
 - **Frontend Specialist** - Custom components, theming
 - Agent summaries stored in `/agent-summaries/` for context persistence
 
+## CRITICAL RULES
+- **User's word is absolute** - Always pause and read user messages immediately, even mid-task
+- **Never ignore the user** - User input takes priority over any running agent or task
+- **All changes to main MUST go through PRs** - No direct pushes to main, ever
+- **User reviews PRs on GitHub before merge** - Wait for explicit approval
+
 ## Notes
 - Run `mint dev` from project root (where docs.json lives)
 - If page 404s, check that it's added to docs.json navigation
